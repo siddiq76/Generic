@@ -71,4 +71,26 @@ public class FindMaxTest {
 		String maximumString = FindMax.maximumString("Apple", "Banana", "Peach");
 		Assert.assertEquals("Peach", maximumString);
 	}
+	
+	/* Maximum Integer among the given Generic set */
+	@Test
+	public void maximumObjectInteger() {
+		Integer maximumObject = FindMax.maximumOfObject(240, 250, 220);
+		Assert.assertEquals((Integer) 250, maximumObject);
+	}
+
+	/* Maximum Float among the given Generic set */
+	@Test
+	public void maximumObjectFloat() {
+		Float maximumObject = FindMax.maximumOfObject(9.999f, 10.001f, 10.0f);
+		Assert.assertEquals((Float) 10.001f, maximumObject);
+	}
+
+	/* Maximum String among the given Generic set */
+	@Test
+	public void maximumObjectString() {
+		String maximumObject = FindMax.maximumOfObject("BridgeLabz", "Capgemini", "Sogeti");
+		Assert.assertEquals((String) "Sogeti", maximumObject);
+	}
+
 }
