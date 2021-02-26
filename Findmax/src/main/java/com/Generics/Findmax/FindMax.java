@@ -1,6 +1,16 @@
 package com.Generics.Findmax;
 
-public class FindMax {
+public class FindMax <T extends Comparable<T>> {
+	T firstValue;
+	T secondValue;
+	T thirdValue;
+
+	public FindMax(T firstValue, T secondValue, T thirdValue) {
+		this.firstValue = firstValue;
+		this.secondValue = secondValue;
+		this.thirdValue = thirdValue;
+	}
+
 	/* Welcome message */
 	public static void printWelcomeMessage() {
 		System.out.println("Welcome to the Find Maximum Program");
@@ -13,6 +23,7 @@ public class FindMax {
 			maximumValue = secondValue;
 		if (thirdValue.compareTo(maximumValue) > 0)
 			maximumValue = thirdValue;
+		System.out.println("Maximum Value is " + maximumValue);
 		return maximumValue;
 	}
 	
@@ -24,6 +35,7 @@ public class FindMax {
 			maximumValue = second; // second is larger
 		if (third.compareTo(maximumValue) > 0)
 			maximumValue = third; // third is larger
+		System.out.println("Maximum Value is " + maximumValue);
 		return maximumValue;
 	}
 	
@@ -34,17 +46,24 @@ public class FindMax {
 			maximum = secondString;
 		if (thirdString.compareTo(maximum) > 0)
 			maximum = thirdString;
+		System.out.println("Maximum Value is " + maximum);
 		return maximum;
 	}
-	public static void main(String[] args) {
-		System.out.println("The maximumInteger value in given set is " + maximumInteger(220, 240, 210));
-		System.out.println("The maximumFloat value in given set is " + maximumFloat(220.25f, 240.30f, 210.99f));
-		System.out.println("The maximumString value in given set is " + maximumString("Peach", "Apple", "Banana"));
-		System.out.println("The maximumInteger Generic value in given set is " + maximumOfObject(999, 999, 996));
-		System.out.println("The maximumFloat Generic value in given set is " + maximumOfObject(7.99f, 7.999f, 7.9999f));
-		System.out.println("The maximumFloat Generic value in given set is "+ maximumOfObject("BridgeLabz", "Capgemini", "Sogeti"));
+	/* maximum of values at test position */
+	public static <T extends Comparable<T>> T maximumOfObject(T first, T second, T third) {
+		T maximumValue = first; // first is larger
+		if (second.compareTo(maximumValue) > 0)
+			maximumValue = second; // second is larger
+		if (third.compareTo(maximumValue) > 0)
+			maximumValue = third; // third is larger
+		System.out.println("Maximum Value is " + maximumValue);
+		return maximumValue;
 	}
 
+	/* Method return maximum of the 3 values at any position */
+	public T findMaxValueAtAnyPosition() {
+		return FindMax.maximumOfObject(firstValue, secondValue, thirdValue);
+	}
 	
 	
 
