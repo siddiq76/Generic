@@ -36,6 +36,16 @@ public class FindMax {
 			maximum = thirdString;
 		return maximum;
 	}
+	public static void main(String[] args) {
+		System.out.println("The maximumInteger value in given set is " + maximumInteger(220, 240, 210));
+		System.out.println("The maximumFloat value in given set is " + maximumFloat(220.25f, 240.30f, 210.99f));
+		System.out.println("The maximumString value in given set is " + maximumString("Peach", "Apple", "Banana"));
+		System.out.println("The maximumInteger Generic value in given set is " + maximumOfObject(999, 999, 996));
+		System.out.println("The maximumFloat Generic value in given set is " + maximumOfObject(7.99f, 7.999f, 7.9999f));
+		System.out.println("The maximumFloat Generic value in given set is "+ maximumOfObject("BridgeLabz", "Capgemini", "Sogeti"));
+	}
+
+	
 	
 
 }
