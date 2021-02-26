@@ -1,5 +1,9 @@
 package com.Generics.Findmax;
 
+import java.awt.List;
+import java.util.Arrays;
+import java.util.Collections;
+
 public class FindMax <T extends Comparable<T>> {
 	T firstValue;
 	T secondValue;
@@ -64,7 +68,13 @@ public class FindMax <T extends Comparable<T>> {
 	public T findMaxValueAtAnyPosition() {
 		return FindMax.maximumOfObject(firstValue, secondValue, thirdValue);
 	}
-	
+	/* maximum of values at test position */
+	public static <T extends Comparable<T>> T maximumOfObject(T... value) {
+		List<T> list = Arrays.asList(value);
+		Collections.sort(list);
+		System.out.println("Maximum Value is " + list.get(list.size() - 1));
+		return list.get(list.size() - 1);
+	}
 	
 
 }
